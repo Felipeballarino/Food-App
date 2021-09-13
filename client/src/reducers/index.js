@@ -15,12 +15,15 @@ const {
     FILTER_FOR_LOW_SCORE,
     FILTER_FOR_HIGH_SCORE,
     GET_DIETS,
-    GET_DIET_TYPES
+    GET_DIET_TYPES,
+    POST_RECIPE,
+    GET_LIST_FOR_ID
  } = require("../actions/names");
 
 const initialState = {
     recipes:[],
     diets:[],
+    detail:[],
     loading:false
 }
 
@@ -32,27 +35,16 @@ const reducer = (state=initialState, {type, payload})=>{
                 loading:false,
                 recipes:payload,
             }
-        case GET_LIST_FOR_NAME: // buscar 
+        case GET_LIST_FOR_NAME: // Search bar
             return{
                 ...state,
                 loading:false,
                 recipes:payload
             }
-        case FILTER_FOR_NAME_DESCENDENT://filtro de A-Z
-            return{
-                recipes:orderNameHighToLow(state.recipes)
-            }
-        case FILTER_FOR_NAME_ASCENDENT: // filtro de Z-A
-            return{
-                recipes:orderNameLowToHigh(state.recipes)
-            }
-        case FILTER_FOR_LOW_SCORE: //filtro de menor a mayor puntaje
-            return{
-                recipes:orderNameLowScore(state.recipes)
-            }
-        case FILTER_FOR_HIGH_SCORE: // filtro de mayor a menor puntaje
-            return{
-                recipes:orderNameHighScore(state.recipes)
+        case GET_LIST_FOR_ID: //detalle receta
+            return {
+                ...state,
+                detail:payload
             }
         case GET_DIETS://traer todas las dietas
             return {
@@ -65,13 +57,37 @@ const reducer = (state=initialState, {type, payload})=>{
                 loading:false,
                 recipes:payload
             }
-        case LOADING:
-            return {
-                ...state,
-                loading: true
+        case POST_RECIPE:
+                return {
+                ...state
             }
+        case LOADING:
+                return {
+                    ...state,
+                    loading: true
+                }
+        case FILTER_FOR_NAME_DESCENDENT://filtro de A-Z
+                return{
+                    ...state,
+                    recipes:orderNameHighToLow(state.recipes),
+                }
+        case FILTER_FOR_NAME_ASCENDENT: // filtro de Z-A
+                return{
+                    ...state,
+                    recipes:orderNameLowToHigh(state.recipes), 
+                }
+        case FILTER_FOR_LOW_SCORE: //filtro de menor a mayor puntaje
+                return{
+                    ...state,
+                    recipes:orderNameLowScore(state.recipes),  
+                }
+        case FILTER_FOR_HIGH_SCORE: // filtro de mayor a menor puntaje
+                return{
+                    ...state,
+                    recipes:orderNameHighScore(state.recipes),   
+                }
         default:
-            return state;
+                return state;
     }
 
 }

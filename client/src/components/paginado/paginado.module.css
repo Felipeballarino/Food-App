@@ -1,0 +1,18 @@
+.paginado{ 
+    color: white;
+    padding: 12px;
+    font-size: 20px;
+    background-color: rgb(2, 0, 0,0.4);
+    /* border: white 1px solid; */
+    cursor:pointer;
+    overflow: hidden;
+}
+
+.paginado:hover{
+    background-color: rgb(2, 0, 0,1);
+
+}
+
+.contenedor{
+    margin-top: 50px;
+}

@@ -9,7 +9,8 @@ import {
     FILTER_FOR_LOW_SCORE,
     FILTER_FOR_HIGH_SCORE,
     GET_DIETS,
-    GET_DIET_TYPES
+    GET_DIET_TYPES,
+    POST_RECIPE
 } from './names'
 
 //TRAER TODAS LAS RECETAS
@@ -74,32 +75,6 @@ export const getRecipeForId = (id)=>{
 
 }
 
-
-//-----------FILTROS-------------------------------------------------------
-
-export const filterForNameDescendent =()=>{
-    return {
-        type:FILTER_FOR_NAME_DESCENDENT
-    }
-}
-
-export const filterForNameAscendent =()=>{
-    return {
-        type:FILTER_FOR_NAME_ASCENDENT
-    }
-}
-
-export const filterForLowScore =()=>{
-    return {
-        type:FILTER_FOR_LOW_SCORE
-    }
-}
-export const filterForHighScore =()=>{
-    return {
-        type:FILTER_FOR_HIGH_SCORE
-    }
-}
-
 export const getDietsAll = () =>{
     return (dispatch)=>{
         dispatch({type:LOADING});
@@ -138,4 +113,44 @@ export const getDietsTypes = (type)=>{
    }
 }
 
+export const createRecipe = (payload) => {
+    return async (dispatch) => {
+        try {
+            await axios.post('http://localhost:3001/recipe', payload);
+            return dispatch({
+                 type: POST_RECIPE
+                 })
+        } catch (error) {
+            console.log(error)
+        }
+    };
+}
+
+
+
+
+//-----------FILTROS-------------------------------------------------------
+
+export const filterForNameDescendent =()=>{
+    return {
+        type:FILTER_FOR_NAME_DESCENDENT
+    }
+}
+
+export const filterForNameAscendent =()=>{
+    return {
+        type:FILTER_FOR_NAME_ASCENDENT
+    }
+}
+
+export const filterForLowScore =()=>{
+    return {
+        type:FILTER_FOR_LOW_SCORE
+    }
+}
+export const filterForHighScore =()=>{
+    return {
+        type:FILTER_FOR_HIGH_SCORE
+    }
+}
 

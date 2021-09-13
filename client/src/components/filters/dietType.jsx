@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux"; 
 import {getDietsAll, getDietsTypes,getRecipe} from '../../actions/index'
+import style from './filters.module.css'
+
 
 
 const SelectType = () =>{
@@ -22,17 +24,18 @@ const SelectType = () =>{
             dispatch(getDietsTypes(e.target.value))
         }
         setDiet("")
-    
     }
 
+    
+
     return(
-        <select value={diet} onChange={handlerChange}>
+        <select value={diet} onChange={handlerChange}  className={style.container}>
             <option value = "" >Diets Order:</option>
-            <option value = "All" >All</option>
+            <option value = "All"  className={style.option}>All</option>
             {
             //console.log(allState.diets, 'estado'),
             allState.diets && allState.diets.map(diet=>
-                <option value={diet.title}>
+                <option value={diet.title} className={style.option}>
                     {diet.title}
                 </option>)
             }

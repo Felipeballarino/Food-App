@@ -9,4 +9,5 @@ export const FILTER_FOR_LOW_SCORE = 'FILTER_FOR_LOW_SCORE';
 export const FILTER_FOR_HIGH_SCORE = 'FILTER_FOR_HIGH_SCORE';
 export const GET_DIETS = 'GET_DIETS'
 export const GET_DIET_TYPES = 'GET_DIET_TYPES';
+export const POST_RECIPE = "POST_RECIPE"
 

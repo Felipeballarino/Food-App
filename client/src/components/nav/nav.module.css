@@ -1,0 +1,93 @@
+.container{
+    display: flex;
+    align-items: center;
+    background-color: #8b9496;
+    width: auto;
+    padding: 0px 10px 0px 10px;
+    top:0px;
+    left:0px;
+    right: 0px; 
+    border:solid rgb(116, 129, 129);
+    box-shadow: 0px 5px 50px black;
+    position: fixed;
+    padding-bottom:20px ;
+}
+
+
+.foto{
+    width: 100px;
+    height: 100px;
+}
+
+.nav1{
+margin-left: 10px;
+margin-right:0px;
+font-size: 30px;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Merriweather', serif;
+font-family: 'Righteous', cursive;
+color: white;
+text-decoration: none;
+}
+
+.nav2{
+    margin-right: 100px;
+}
+
+.nav{
+    font-size: 25px;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Righteous', cursive;
+    font-family: 'Staatliches', cursive;
+    position:absolute;
+    right: 50px; top: 38px; z-index: 5;
+    letter-spacing:2px
+}
+
+.btn{
+    background-color: Transparent;
+    cursor:pointer;
+    overflow: hidden;
+    color: white;
+    border: 2px solid white;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgb(104, 103, 103), 0 6px 20px 0 black;
+}
+
+.icon{
+    position:absolute;
+    right: 255px; top: 36px; 
+}
+
+.home{
+    position:absolute;
+    right: 190px; top:19px; z-index: 5; 
+    font-size: 25px;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Righteous', cursive;
+    font-family: 'Staatliches', cursive;
+    letter-spacing:2px
+}
+
+
+
+.iconHome{
+    position:absolute;
+    right: 250px; top: 14px; 
+
+}
+
+.filterConteiner{
+    position:absolute;
+    right: 510px; top: 80px;
+}
+
+
+

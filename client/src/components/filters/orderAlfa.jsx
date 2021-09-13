@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
 import {filterForNameAscendent, filterForNameDescendent} from '../../actions/index'
+import style from './filters.module.css'
 
 const OrderAlpha = () =>{
 
@@ -22,10 +23,10 @@ const OrderAlpha = () =>{
     }
 
     return(
-        <select value = {order} onChange={handlerChange}>
+        <select value = {order} onChange={handlerChange} className={style.container}>
             <option value = {0} > Alphabetical Order : </option>
-            <option value = {1}>A-Z</option>
-            <option value = {2}>Z-A</option>
+            <option value = {1} className={style.option} >A-Z</option>
+            <option value = {2} className={style.option} >Z-A</option>
         </select>
     )
 }
