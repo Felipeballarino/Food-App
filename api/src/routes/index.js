@@ -29,6 +29,7 @@ router.get('/recipes', async (req, res, next)=>{
 
 router.get('/recipes/:id', async (req, res)=>{
     const { id } = req.params; 
+    console.log(id, 'esto es aidi')
     const recipeId = await searchId(id);
 
     if(recipeId){
@@ -44,13 +45,13 @@ router.get('/types', async (_req,res)=>{
 
 
 router.post('/recipe', async (req, res) => {
-  const {name, summary, score,instructions,imagen,diets} = req.body;
+  const {name, summary, score,instructions,image,diets} = req.body;
   if(!name || !summary || !(diets.length >= 1)){
       return res.status(404).json({msg: 'Faltan datos, vuelve a intentarlo'})
   }
   await diets.forEach(async element => await createDiet(element))
   //console.log(name, summary, score,instructions,imagen,diets)
-  const nose = await createRecipe(name, summary, score,instructions,imagen,diets) 
+  const nose = await createRecipe(name, summary, score,instructions,image,diets) 
   return res.status(200).json(nose)
 })
 

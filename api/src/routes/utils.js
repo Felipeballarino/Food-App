@@ -7,7 +7,7 @@ const { Recipe, Diet } = require('../db');
 //Buscamos por nombre 
 const searchName = async (data)=>{
     const recipe = await recipeAll();
-     console.log(recipe[100])
+     //console.log(recipe[100])
     const allSearch = recipe.filter(e=> e.name.toLowerCase().includes(data))
     if(allSearch.length >=1){
         return allSearch
@@ -16,19 +16,19 @@ const searchName = async (data)=>{
 }
 //Buscamos por id
 const searchId = async (id) =>{
-    console.log('aca', id)
+    //console.log('aca', id)
         const search = await getApiID(id);
         if(search){
-            console.log('aca')
+            //console.log('aca')
             return search;
         }
         const dataBase = await getBdInfo();
         const searchDB = dataBase.find(e => e.id === id)
         if(dataBase){
-            console.log('aca1')
+            //console.log('aca1')
             return searchDB;
         } 
-        console.log('aca2')
+        //console.log('aca2')
         return search;
 };
 
@@ -47,14 +47,14 @@ const searchType = async ()=>{
 
 
  
-const createRecipe = async (name, summary, score,instructions,imagen,diets)=>{
+const createRecipe = async (name, summary, score,instructions,image,diets)=>{
      //console.log(name, summary, score,instructions,imagen,diets,'Esto es recipe')
     const recipeCreator = await Recipe.create({
         name,
         summary,
         score,
         instructions,
-        imagen,
+        image,
     });
     // console.log(recipeCreator, 'Recipe')
     diets.forEach(async (element) => {

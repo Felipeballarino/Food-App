@@ -23,7 +23,7 @@ const getBdInfo = async () =>{
                 summary: e.summary,
                 score: e.score,
                 instructions: e.instructions,
-                imagen:e.image,
+                image:e.image,
                 diets: e.diets.map(diet => diet.title)
             }
         })
