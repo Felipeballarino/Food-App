@@ -30,7 +30,7 @@ const getBdInfo = async () =>{
         return recipe
         
     }catch (e) {
-        console.log(e, 'error requestID');
+        console.log(e, 'error requestDB');
         return false;
     };
 

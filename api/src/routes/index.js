@@ -11,7 +11,7 @@ const router = Router();
 
 // Configurar los routers
 
-router.get('/recipes', async (req, res, next)=>{
+router.get('/recipes', async (req, res)=>{
     const {name} = req.query;
 
     if(name){
@@ -29,7 +29,7 @@ router.get('/recipes', async (req, res, next)=>{
 
 router.get('/recipes/:id', async (req, res)=>{
     const { id } = req.params; 
-    console.log(id, 'esto es aidi')
+    //console.log(id, 'esto es aidi')
     const recipeId = await searchId(id);
 
     if(recipeId){
@@ -51,8 +51,8 @@ router.post('/recipe', async (req, res) => {
   }
   await diets.forEach(async element => await createDiet(element))
   //console.log(name, summary, score,instructions,imagen,diets)
-  const nose = await createRecipe(name, summary, score,instructions,image,diets) 
-  return res.status(200).json(nose)
+  const recetaCreada = await createRecipe(name, summary, score,instructions,image,diets) 
+  return res.status(200).json(recetaCreada)
 })
 
 router.get('/recipes/diet/:type',async (req, res)=>{

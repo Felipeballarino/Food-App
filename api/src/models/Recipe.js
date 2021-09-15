@@ -5,13 +5,13 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('recipe', {
     id:{
-      type: DataTypes.UUID, // Genera un numero random unico
+      type: DataTypes.UUID, 
       defaultValue:DataTypes.UUIDV4,
       primaryKey:true,
       allowNull:false
     },
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING, 
       allowNull: false,
     },
     summary:{
