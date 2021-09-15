@@ -5,6 +5,7 @@ import {getRecipeForId} from '../../actions/index'
 import style from './detail.module.css'
 import Loading from "../loading/loading";
 import fotoScore from '../../Imagenes/1x/1x/outline_favorite_border_white_36dp.png'
+import foto from '../../Imagenes/1x/1x/outline_arrow_back_white_48dp.png'
 
 
 const Details = (props)=>{
@@ -57,7 +58,14 @@ const Details = (props)=>{
                     </div>  
                 }
             </div>
-            <Link to='/food/home' className={style.btnVolver}><button>Volver</button></Link>
+            <Link to='/food/home'>
+                <div className={style.back}>
+                    <div>
+                        <img src={foto} className={style.backImg}/>
+                        <p className={style.backH}>Back</p>
+                    </div>
+                </div>
+            </Link>
             <br/>
             <br/>
             <br/>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import{useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Card from '../card/card'
 import { getRecipe } from "../../actions";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ const Home = () =>{
 
     const dispatch = useDispatch();
 
-    const allRecipe = useSelector((state)=>state) // mapStateToProps: guardame en allRecipe todo lo que este en el estado de recipes
+    const allRecipe = useSelector((state)=>state) 
 
     //paginado
     const [currentPage, setCurrentPage] = useState(1)

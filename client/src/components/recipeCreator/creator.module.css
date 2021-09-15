@@ -125,7 +125,6 @@
 .boxBack{
     background:rgba(21, 31, 46, 0.850);
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
-    width: 60px;
     position: absolute;
     left:0px; top: 50px;
     width: 380px
