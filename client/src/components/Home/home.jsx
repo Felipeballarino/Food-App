@@ -52,9 +52,9 @@ const Home = () =>{
                                 <Link to = {'/food/detail/' + el.id}>
                                     <Card 
                                     title ={el.name} 
-                                    imagen = {el.image? el.image : <img src="https://avatars.githubusercontent.com/u/2078339?v=4"/>}
+                                    imagen = {el.image? el.image : <img src="https://avatars.githubusercontent.com/u/2078339?v=4" alt=''/>}
                                     diet ={el.diets} 
-                                    key ={el.id}/>
+                                    id ={el.id}/>
                                 </Link>
                         )
                     })

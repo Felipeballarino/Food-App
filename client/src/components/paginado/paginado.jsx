@@ -15,7 +15,7 @@ const Paginado = ({recipesPerPage, allRecipe, paginado}) =>{
             <ul className={style.contenedor}>
                 {pageNumber &&
                 pageNumber.map(number =>(
-                            <a className={style.paginado} onClick={()=>paginado(number)}>{number}</a>
+                            <a className={style.paginado} onClick={()=>paginado(number)} key={number}>{number}</a>
                 ))}
             </ul>
         </div>

@@ -27,7 +27,6 @@ const Details = (props)=>{
                 <br/>
                 <br/>
                 <br/>
-                {console.log(myRecipe)}
                 {
                     myRecipe.Loading? <Loading /> :
                     <div>
@@ -36,7 +35,7 @@ const Details = (props)=>{
                         <img className={style.img} src={myRecipe.detail.image} alt='pone otra foto rey'/>
 
                         <div className={style.scoreBox}>
-                            <img className={style.scoreImg} src={fotoScore}/>
+                            <img className={style.scoreImg} src={fotoScore} alt = " "/>
                             <p className={style.score}>{myRecipe.detail.score}</p>
                         </div>
 
@@ -61,7 +60,7 @@ const Details = (props)=>{
             <Link to='/food/home'>
                 <div className={style.back}>
                     <div>
-                        <img src={foto} className={style.backImg}/>
+                        <img src={foto} className={style.backImg} alt= " "/>
                         <p className={style.backH}>Back</p>
                     </div>
                 </div>
